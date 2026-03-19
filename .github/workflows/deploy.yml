@@ -22,6 +22,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Enable GitHub Pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Create the GitHub Pages site (build_type=workflow uses Actions for deployment).
+          # The command exits 0 on success; on failure we check the error:
+          #   - HTTP 409 means Pages is already enabled, which is fine.
+          #   - Any other error is re-raised so the workflow surfaces the problem.
+          response=$(gh api repos/${{ github.repository }}/pages \
+            --method POST \
+            -H "Accept: application/vnd.github+json" \
+            -f build_type=workflow 2>&1) || {
+            echo "$response" | grep -q "already enabled\|409" && exit 0
+            echo "$response" >&2; exit 1
+          }
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
