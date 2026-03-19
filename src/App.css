@@ -124,7 +124,8 @@ nav { position:sticky; top:0; z-index:150; background:var(--navy-dark); border-b
     .members-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
     .member-card { background:var(--white); border:1px solid var(--border); border-top:3px solid var(--gold); border-radius:0 0 6px 6px; padding:24px; text-align:center; box-shadow:var(--shadow); transition:transform .3s,box-shadow .3s; }
     .member-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); }
-    .mc-av { width:60px; height:60px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-family:'Barlow Condensed',sans-serif; font-size:1.3rem; font-weight:900; margin:0 auto 14px; }
+    .mc-av { width:60px; height:60px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-family:'Barlow Condensed',sans-serif; font-size:1.3rem; font-weight:900; margin:0 auto 14px; overflow:hidden; }
+    .mc-av img { width:100%; height:100%; object-fit:cover; display:block; }
     .member-card h4 { font-family:'Barlow Condensed',sans-serif; font-size:1.2rem; font-weight:800; letter-spacing:.04em; text-transform:uppercase; margin-bottom:4px; color:var(--navy); }
     .member-card .role { font-size:.7rem; color:var(--ink3); font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin-bottom:12px; }
     .mc-tags { display:flex; flex-wrap:wrap; gap:5px; justify-content:center; }
