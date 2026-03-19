@@ -202,6 +202,23 @@ nav { position:sticky; top:0; z-index:150; background:var(--navy-dark); border-b
     .lesson-card p { font-size:.8rem; line-height:1.7; color:var(--ink2); }
     .journey-aside h3 { font-family:'Barlow Condensed',sans-serif; font-size:1.5rem; font-weight:900; letter-spacing:.04em; text-transform:uppercase; color:var(--navy); margin-bottom:22px; }
 
+    /* ── JOURNEY VIDEOS ── */
+    .journey-video-timeline { position:relative; max-width:1120px; margin:0 auto; padding:8px 0; }
+    .journey-video-timeline::before { content:''; position:absolute; left:50%; top:0; bottom:0; width:3px; transform:translateX(-50%); background:linear-gradient(to bottom,var(--gold),var(--navy-mid),var(--gold)); border-radius:2px; }
+    .journey-video-item { position:relative; width:calc(50% - 52px); margin-bottom:30px; }
+    .journey-video-item:last-child { margin-bottom:0; }
+    .journey-video-item.left { margin-right:auto; }
+    .journey-video-item.right { margin-left:auto; }
+    .journey-video-item::after { content:''; position:absolute; top:18px; width:14px; height:14px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 3px var(--off-white),0 0 0 6px rgba(232,160,32,.3); }
+    .journey-video-item.left::after { right:-59px; }
+    .journey-video-item.right::after { left:-59px; }
+    .journey-video-card { background:var(--white); border-top:3px solid var(--gold); border-radius:8px; box-shadow:var(--shadow); padding:18px; }
+    .journey-video-card h3 { font-family:'Barlow Condensed',sans-serif; font-size:1.05rem; font-weight:900; letter-spacing:.05em; text-transform:uppercase; color:var(--navy); margin-bottom:12px; }
+    .journey-video-frame { position:relative; width:100%; padding-top:56.25%; border-radius:6px; overflow:hidden; background:var(--navy-dark); }
+    .journey-video-frame iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+    .journey-video-card.missing { min-height:220px; border:2px dashed rgba(232,160,32,.45); border-top:3px solid var(--gold); background:linear-gradient(135deg,#fff,#fff8ea); display:flex; flex-direction:column; justify-content:center; }
+    .journey-video-card.missing p { font-size:.84rem; line-height:1.75; color:var(--ink2); }
+
     /* ── IMPACT ── */
     .impact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
     .impact-card { background:var(--white); border-top:3px solid var(--gold); border-radius:0 0 8px 8px; padding:28px 24px; box-shadow:var(--shadow); text-align:center; transition:transform .3s; }
@@ -367,6 +384,9 @@ nav { position:sticky; top:0; z-index:150; background:var(--navy-dark); border-b
       .values-row{grid-template-columns:1fr 1fr}
       .gallery-grid{grid-template-columns:1fr 1fr}
       .how-steps{grid-template-columns:1fr}
+      .journey-video-timeline::before{left:14px;transform:none}
+      .journey-video-item,.journey-video-item.left,.journey-video-item.right{width:100%;margin-left:0;margin-right:0;padding-left:44px}
+      .journey-video-item.left::after,.journey-video-item.right::after{left:7px;right:auto}
       .multi-flow{gap:4px}
       .form-row{grid-template-columns:1fr}
       .footer-top{grid-template-columns:1fr;gap:28px}
